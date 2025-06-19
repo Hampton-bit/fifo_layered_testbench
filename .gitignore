@@ -1,6 +1,10 @@
-./layered/qaLog.txt 
-./layered/xcelium.d 
-./layered/xrun.history 
-./layered/xrun.log 
-./layered/.bpad 
-./layered/.git
+# Ignore specific files
+qaLog.txt
+xcelium.d
+
+# Ignore all .log files
+*.log
+
+# Ignore specific directories
+/layered/.bpad
+/layered/.git
