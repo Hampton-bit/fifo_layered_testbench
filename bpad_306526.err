@@ -1,0 +1,164 @@
+Operating system: Linux
+                  0.0.0 Linux 4.18.0-372.32.1.el8_6.x86_64 #1 SMP Fri Oct 7 12:35:10 EDT 2022 x86_64
+CPU: amd64
+     family 6 model 151 stepping 2
+     1 CPU
+
+GPU: UNKNOWN
+
+Crash reason:  DUMP_REQUESTED
+Crash address: 0x7fc0c9302406
+Process uptime: not available
+
+Thread 0 (crashed)
+ 0  libcbreakpad.so + 0x36406
+    rax = 0x0000000000000000   rdx = 0x0000000000000000
+    rcx = 0x00007fc0c9300cb2   rbx = 0x00007fc0b9e24eb0
+    rsi = 0x0000000000000001   rdi = 0x00007fc0b9e24838
+    rbp = 0x00007fc0b9e24df0   rsp = 0x00007fc0b9e247a0
+     r8 = 0x0000000000000000    r9 = 0x0000000000000000
+    r10 = 0x00007fc0c92ced68   r11 = 0x00007fc0c92d8226
+    r12 = 0x0000000000000000   r13 = 0x00007fc0b9e25198
+    r14 = 0x00007fc0b9e24e30   r15 = 0x000000000668d48a
+    rip = 0x00007fc0c9302406
+    Found by: given as instruction pointer in context
+ 1  libcbreakpad.so + 0x34672
+    rbp = 0x00007fc0b9e24f40   rsp = 0x00007fc0b9e24e00
+    rip = 0x00007fc0c9300672
+    Found by: previous frame's frame pointer
+ 2  xmsim + 0x7f3f20
+    rbp = 0x00007fc0b9e24f40   rsp = 0x00007fc0b9e24e98
+    rip = 0x0000000000bf3f20
+    Found by: stack scanning
+ 3  xmsim + 0x177c3b9
+    rsp = 0x00007fc0b9e24f50   rip = 0x0000000001b7c3b9
+    Found by: stack scanning
+ 4  xmsim + 0x854870
+    rsp = 0x00007fc0b9e24f58   rip = 0x0000000000c54870
+    Found by: stack scanning
+ 5  xmsim + 0x854870
+    rsp = 0x00007fc0b9e24fb8   rip = 0x0000000000c54870
+    Found by: stack scanning
+ 6  libc-2.28.so + 0x504f5
+    rsp = 0x00007fc0b9e24fc0   rip = 0x00007fc0c938d4f5
+    Found by: stack scanning
+ 7  xmsim + 0x854870
+    rsp = 0x00007fc0b9e24fc8   rip = 0x0000000000c54870
+    Found by: stack scanning
+ 8  xmsim + 0x854870
+    rsp = 0x00007fc0b9e25028   rip = 0x0000000000c54870
+    Found by: stack scanning
+ 9  libc-2.28.so + 0x504f5
+    rsp = 0x00007fc0b9e25030   rip = 0x00007fc0c938d4f5
+    Found by: stack scanning
+10  xmsim + 0x854870
+    rsp = 0x00007fc0b9e25038   rip = 0x0000000000c54870
+    Found by: stack scanning
+11  xmsim + 0x854870
+    rsp = 0x00007fc0b9e25098   rip = 0x0000000000c54870
+    Found by: stack scanning
+12  libc-2.28.so + 0x504f5
+    rsp = 0x00007fc0b9e250a0   rip = 0x00007fc0c938d4f5
+    Found by: stack scanning
+13  xmsim + 0x854870
+    rsp = 0x00007fc0b9e250a8   rip = 0x0000000000c54870
+    Found by: stack scanning
+14  xmsim + 0x854870
+    rsp = 0x00007fc0b9e25108   rip = 0x0000000000c54870
+    Found by: stack scanning
+15  libc-2.28.so + 0x504f5
+    rsp = 0x00007fc0b9e25110   rip = 0x00007fc0c938d4f5
+    Found by: stack scanning
+16  xmsim + 0x854870
+    rsp = 0x00007fc0b9e25118   rip = 0x0000000000c54870
+    Found by: stack scanning
+17  libc-2.28.so + 0x50942
+    rsp = 0x00007fc0b9e25150   rip = 0x00007fc0c938d942
+    Found by: stack scanning
+18  xmsim + 0x177e165
+    rsp = 0x00007fc0b9e25190   rip = 0x0000000001b7e165
+    Found by: stack scanning
+19  xmsim + 0x23d4388
+    rsp = 0x00007fc0b9e251c0   rip = 0x00000000027d4388
+    Found by: stack scanning
+20  libc-2.28.so + 0x180800
+    rsp = 0x00007fc0b9e251e0   rip = 0x00007fc0c94bd800
+    Found by: stack scanning
+21  xmsim + 0x854e7c
+    rsp = 0x00007fc0b9e25220   rip = 0x0000000000c54e7c
+    Found by: stack scanning
+22  xmsim + 0x854ed5
+    rsp = 0x00007fc0b9e25240   rip = 0x0000000000c54ed5
+    Found by: stack scanning
+23  xmsim + 0x8b9e6e
+    rsp = 0x00007fc0b9e25270   rip = 0x0000000000cb9e6e
+    Found by: stack scanning
+24  xmsim + 0x8ba71d
+    rsp = 0x00007fc0b9e25350   rip = 0x0000000000cba71d
+    Found by: stack scanning
+25  libpthread-2.28.so + 0x12ce0
+    rsp = 0x00007fc0b9e25380   rip = 0x00007fc0c9cb4ce0
+    Found by: stack scanning
+
+Loaded modules:
+0x00400000 - 0x0324dfff  xmsim  ???  (main)  (WARNING: No symbols, xmsim, E252156156151C97B1FFBDEF85D9C8D20)
+0x0324f000 - 0x0345efff  xmsim  ???
+0x7fc0b7d8a000 - 0x7fc0b7d9ffff  libz.so.1.2.11  ???
+0x7fc0b7da0000 - 0x7fc0b7fa0fff  libz.so.1.2.11  ???
+0x7fc0b7fa2000 - 0x7fc0b90fcfff  librnc.so  ???
+0x7fc0b90fd000 - 0x7fc0b919afff  librnc.so  ???
+0x7fc0b9575000 - 0x7fc0b9598fff  libml_uvm.so  ???
+0x7fc0b9e53000 - 0x7fc0ba010fff  libStrapNC.so  ???
+0x7fc0ba01a000 - 0x7fc0ba0ccfff  libdcapi.so  ???
+0x7fc0ba0cd000 - 0x7fc0ba0d9fff  libdcapi.so  ???
+0x7fc0ba0db000 - 0x7fc0ba15dfff  libpcre2-8.so.0.7.1  ???
+0x7fc0ba15e000 - 0x7fc0ba35efff  libpcre2-8.so.0.7.1  ???
+0x7fc0ba35f000 - 0x7fc0ba385fff  libselinux.so.1  ???
+0x7fc0ba386000 - 0x7fc0ba586fff  libselinux.so.1  ???
+0x7fc0ba589000 - 0x7fc0ba58efff  libuuid.so.1.3.0  ???
+0x7fc0ba58f000 - 0x7fc0ba78ffff  libuuid.so.1.3.0  ???
+0x7fc0ba791000 - 0x7fc0ba7ddfff  libblkid.so.1.1.0  ???
+0x7fc0ba7de000 - 0x7fc0ba9e2fff  libblkid.so.1.1.0  ???
+0x7fc0ba9e4000 - 0x7fc0baa39fff  libmount.so.1.1.0  ???
+0x7fc0baa3a000 - 0x7fc0bac3cfff  libmount.so.1.1.0  ???
+0x7fc0bac3e000 - 0x7fc0bac44fff  librt-2.28.so  ???
+0x7fc0bac45000 - 0x7fc0bae45fff  librt-2.28.so  ???
+0x7fc0bae46000 - 0x7fc0baee4fff  libnss_myhostname.so.2  ???
+0x7fc0baee5000 - 0x7fc0bb0ebfff  libnss_myhostname.so.2  ???
+0x7fc0bb0ec000 - 0x7fc0bb0fffff  libresolv-2.28.so  ???
+0x7fc0bb100000 - 0x7fc0bb300fff  libresolv-2.28.so  ???
+0x7fc0bb303000 - 0x7fc0bb307fff  libnss_dns-2.28.so  ???
+0x7fc0bb308000 - 0x7fc0bb509fff  libnss_dns-2.28.so  ???
+0x7fc0bb50a000 - 0x7fc0bb514fff  libnss_files-2.28.so  ???
+0x7fc0bb515000 - 0x7fc0bb716fff  libnss_files-2.28.so  ???
+0x7fc0bb71d000 - 0x7fc0c86d2fff  locale-archive  ???
+0x7fc0c86d3000 - 0x7fc0c8fa6fff  passwd  ???
+0x7fc0c8fa7000 - 0x7fc0c8fb0fff  libnss_sss.so.2  ???
+0x7fc0c8fb1000 - 0x7fc0c91b1fff  libnss_sss.so.2  ???
+0x7fc0c9233000 - 0x7fc0c92cbfff  libxmjudy.so.1.0.3  ???
+0x7fc0c92cc000 - 0x7fc0c9330fff  libcbreakpad.so  ???  (WARNING: No symbols, libcbreakpad.so, B7E2589FA42BEAC90FB1C5EEB35368C40)
+0x7fc0c9331000 - 0x7fc0c9335fff  libcbreakpad.so  ???
+0x7fc0c933d000 - 0x7fc0c94f8fff  libc-2.28.so  ???  (WARNING: No symbols, libc-2.28.so, 8D55AA64DACD8B2D0D7B04CEF33DDBB20)
+0x7fc0c94f9000 - 0x7fc0c96fdfff  libc-2.28.so  ???
+0x7fc0c9702000 - 0x7fc0c971bfff  libgcc_s.so.1  ???
+0x7fc0c971c000 - 0x7fc0c989cfff  libm-2.28.so  ???
+0x7fc0c989d000 - 0x7fc0c9a9dfff  libm-2.28.so  ???
+0x7fc0c9a9e000 - 0x7fc0c9aa0fff  libdl-2.28.so  ???
+0x7fc0c9aa1000 - 0x7fc0c9ca1fff  libdl-2.28.so  ???
+0x7fc0c9ca2000 - 0x7fc0c9cbcfff  libpthread-2.28.so  ???  (WARNING: No symbols, libpthread-2.28.so, 6B46ABE79CAC1A5941EF266C4AD26D380)
+0x7fc0c9cbd000 - 0x7fc0c9ebdfff  libpthread-2.28.so  ???
+0x7fc0c9ec2000 - 0x7fc0c9eeefff  ld-2.28.so  ???
+0x7fc0c9f06000 - 0x7fc0ca0dcfff  libstdc++.so.6.0.28  ???
+0x7fc0ca0e2000 - 0x7fc0ca0eafff  libxdt.so  ???
+0x7fc0ca0ef000 - 0x7fc0ca0f1fff  ld-2.28.so  ???
+0x7ffc4a5f1000 - 0x7ffc4a5f2fff  linux-gate.so  ???
+
+******BACKTRACE*****
+<unknown> (libcbreakpad.so) [0x7fc0c93001a3]
+<unknown> (libcbreakpad.so) [0x7fc0c9300630]
+vserror (xmsim) [0x1b7c3b9]
+serror (xmsim) [0x1b7e165]
+sv_seghandler_aux (xmsim) [0xcb9e6e]
+sv_seghandler (xmsim) [0xcba71d]
+<unknown> (libpthread.so.0) [0x7fc0c9cb4ce0]
+******BACKTRACE END*****
