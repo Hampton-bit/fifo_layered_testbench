@@ -2,11 +2,13 @@
 // File created by:  xrun
 // Do not modify this file
 //
+-gui
+-TCL
 -MESSAGES
 +EMGRLOG
 xrun.log
 -XLSTIME
-1750427682
+1750445735
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.23.09.d
@@ -20,4 +22,4 @@ xrun
 -XLVERSION
 "TOOL:	xrun(64)	23.09-s006"
 -XLNAME
-./xcelium.d/run.lnx8664.23.09.d/ncdc-0030_1ed18159-e576-4003-a898-27d30dda6c5e
+./xcelium.d/run.lnx8664.23.09.d/ncdc-0030_f7b69fc9-a6d1-4391-a4c3-0311ed0fd0fb

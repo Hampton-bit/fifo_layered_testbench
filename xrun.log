@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jun 20, 2025 at 18:54:42 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jun 20, 2025 at 23:55:35 PKT
 xrun
 	-f file.f
 		./transaction.sv
@@ -10,9 +10,11 @@ xrun
 		./scoreboard.sv
 		./env.sv
 		./fifo.sv
-		./test_read_after_write.sv
+		./test_fifo_empty.sv
 		./testbench.sv
 	-access +rwc
+	-gui
+	-s
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -193,9 +195,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file './scoreboard.sv' is newer than expected.
-	expected: Fri Jun 20 18:54:28 2025
-	actual:   Fri Jun 20 18:54:40 2025
+Recompiling... reason: file './fifo_interface.sv' is newer than expected.
+	expected: Fri Jun 20 23:50:48 2025
+	actual:   Fri Jun 20 23:55:26 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -286,7 +288,9 @@ xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cd
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-file: ./scoreboard.sv
+file: ./fifo_interface.sv
+	interface worklib.fifo_interface:sv
+		errors: 0, warnings: 0
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 15
 DEFINE std       ./STD
@@ -427,7 +431,7 @@ xmelab: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cd
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		$unit_0x4c9ac920
+		$unit_0x46f54156
 		top
 	Building instance overlay tables: ........
         assert(t.randomize()) else $fatal("randomization failed");
@@ -480,14 +484,14 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.test_read_after_write:sv <0x0d9286f2>
-			streams:   1, words:  1946
-		worklib.synchronous_fifo:sv <0x4c7fc352>
+		worklib.test_fifo_empty:sv <0x428d7c5c>
+			streams:   1, words:  1927
+		worklib.synchronous_fifo:sv <0x3dba3e63>
 			streams:   9, words:  3297
-		worklib.top:sv <0x2c1a26fe>
-			streams:  10, words:  2398
-		worklib.fifo_interface:sv <0x229ea750>
-			streams:  63, words: 72041
+		worklib.top:sv <0x15811143>
+			streams:  10, words:  2401
+		worklib.fifo_interface:sv <0x447097ab>
+			streams:  71, words: 75187
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -495,20 +499,20 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15):
 		Modules:                     2       2
 		Interfaces:                  1       1
 		Programs:                    1       1
-		Registers:                  78     122
+		Registers:                  77     121
 		Scalar wires:               10       -
 		Vectored wires:              3       -
-		Named events:                2       6
-		Always blocks:               4       4
-		Initial blocks:              2       2
+		Named events:                4       8
+		Always blocks:              10      10
+		Initial blocks:              4       4
 		Parallel blocks:             1       1
 		Cont. assignments:           2       3
 		Pseudo assignments:          8       -
-		Assertions:                  1       1
+		Assertions:                  3       3
 		Compilation units:           1       1
 		SV Class declarations:       7       7
 		SV Class specializations:    7       7
-		Process Clocks:              3       2
+		Process Clocks:              5       3
 		Simulation timescale:      1ns
 	Writing initial simulation snapshot: worklib.top:sv
 DEFINE std       ./STD
@@ -556,56 +560,60 @@ xmsim: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmsim: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Loading snapshot worklib.top:sv .................... Done
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 SVSEED default: 1
+xcelium> 
 xcelium> source /home/cc/mnt/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
 xcelium> run
-write
-[20][0] Generator: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-read
-[20][1] Generator: DataIn=78, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-write
-[20][2] Generator: DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-read
-[20][3] Generator: DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-write
-[20][4] Generator: DataIn=72, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-read
-[20][5] Generator: DataIn=b6, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-write
-[20][6] Generator: DataIn=4c, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-read
-[20][7] Generator: DataIn=87, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-write
-[20][8] Generator: DataIn=83, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-read
-[20][9] Generator: DataIn=dd, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-write
-[20][10] Generator: DataIn=74, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-read
-[20][11] Generator: DataIn=67, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][0] Generator: DataIn=ac, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][1] Generator: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][2] Generator: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][3] Generator: DataIn=e8, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][4] Generator: DataIn=25, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][5] Generator: DataIn=f5, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][6] Generator: DataIn=f6, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][7] Generator: DataIn=06, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][8] Generator: DataIn=99, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][9] Generator: DataIn=58, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][10] Generator: DataIn=50, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[20][11] Generator: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
 generator ended
 driver started
-[27][0] Monitor: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[37][1] Monitor: DataIn=78, Data_out=0d, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 0d | ref_model: d 
-[47][2] Monitor: DataIn=94, Data_out=0d, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[57][3] Monitor: DataIn=cb, Data_out=94, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 94 | ref_model: 94 
-[67][4] Monitor: DataIn=72, Data_out=94, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[77][5] Monitor: DataIn=b6, Data_out=72, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 72 | ref_model: 72 
-[87][6] Monitor: DataIn=4c, Data_out=72, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[97][7] Monitor: DataIn=87, Data_out=4c, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 4c | ref_model: 4c 
-[107][8] Monitor: DataIn=83, Data_out=4c, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[117][9] Monitor: DataIn=dd, Data_out=83, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 83 | ref_model: 83 
-[127][10] Monitor: DataIn=74, Data_out=83, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[137][11] Monitor: DataIn=67, Data_out=74, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 74 | ref_model: 74 
+[27][0] Monitor: DataIn=ac, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[37][1] Monitor: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[47][2] Monitor: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[57][3] Monitor: DataIn=e8, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[67][4] Monitor: DataIn=25, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[77][5] Monitor: DataIn=f5, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[87][6] Monitor: DataIn=f6, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[97][7] Monitor: DataIn=06, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[107][8] Monitor: DataIn=99, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[117][9] Monitor: DataIn=58, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[127][10] Monitor: DataIn=50, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
+[137][11] Monitor: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 00 | ref_model: 0 
 Test Passed
 Simulation complete via $finish(1) at time 140 NS + 2
 ./env.sv:67         $finish;
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jun 20, 2025 at 18:54:42 PKT  (total: 00:00:00)
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	23.09-s006: Exiting on Jun 20, 2025 at 23:57:12 PKT  (total: 00:01:37)

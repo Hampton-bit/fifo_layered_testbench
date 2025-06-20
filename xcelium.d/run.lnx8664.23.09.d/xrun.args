@@ -6,3 +6,5 @@
 file.f
 -access
 +rwc
+-gui
+-s
