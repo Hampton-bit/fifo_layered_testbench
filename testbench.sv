@@ -24,7 +24,7 @@ synchronous_fifo #(
                     .empty(f_int.empty)
                   );
 
-test t1(f_int);
+test_read_after_write t1(.f_int);
 initial begin clk=0; end 
 always #5 clk = ~clk;
 

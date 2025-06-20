@@ -17,6 +17,7 @@ class env;
     event scb_ended;
 
     int repeat_count;
+    int mon_transmitted;
 
     function new(int repeat_count, virtual fifo_interface vif);
         gen_drv = new();
@@ -29,10 +30,16 @@ class env;
         
         gen = new(gen_drv, gen_scb, repeat_count, gen_ended);
         drv = new(gen_drv, vif);
-        mon = new(mon_scb, vif);
-        scb = new(mon_scb, gen_scb, scb_ended, repeat_count);
+        mon = new(mon_scb, vif, mon_transmitted);
+        scb = new(mon_scb, gen_scb, scb_ended, repeat_count, mon_transmitted);
 
     endfunction
+
+    task pre_test();
+
+            vif.reset();
+
+    endtask
 
     task test();
 
@@ -41,18 +48,20 @@ class env;
             drv.run();
             mon.run();
             scb.run();
-        join_any
+        join_none
  
     endtask 
 
     task post_test();
-        wait(scb_ended.triggered);
+        //wait(gen_ended.triggered);
+        @(gen_ended);
         
         wait(drv.txns_received == repeat_count && scb.txns_received == repeat_count);
 
     endtask 
 
     task run();
+        pre_test();
         test();
         post_test();
         $finish;

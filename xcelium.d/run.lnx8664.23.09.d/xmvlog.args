@@ -13,7 +13,7 @@
 ./scoreboard.sv
 ./env.sv
 ./fifo.sv
-./test.sv
+./test_read_after_write.sv
 ./testbench.sv
 -CDSLIB
 ./xcelium.d/run.lnx8664.23.09.d/cdsrun.lib

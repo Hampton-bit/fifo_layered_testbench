@@ -1,6 +1,6 @@
 class generator;
 
-transaction t;
+transaction t, t_tx;
 mailbox gen_drv;
 mailbox gen_scb;
 int repeat_count;
@@ -18,17 +18,21 @@ function new(mailbox gen_drv, gen_scb, int repeat_count, event gen_ended);
 endfunction
 
 task run();
+int count = 0;
    
     repeat(repeat_count) begin 
 
         // t.cover_alpha.start();
-        t= new();
-            
+        //t=new();
+    
+        
         assert(t.randomize()) else $fatal("randomization failed");
-        $display("[%0t] Generator: DataIn=%h, Data_out=%b, full=%b, empty=%b", $time, t.data_in, t.data_out, t.full, t.empty);
+        $display("[%0t][%0d] Generator: DataIn=%h, Data_out=%h, r_en=%d, w_en=%d, rst_n=%d, full=%b, empty=%b", $time, count, t.data_in, t.data_out, t.r_en, t.w_en, t.rst_n, t.full, t.empty);
         // t.cover_alpha.sample();
-        gen_drv.put(t);
-        gen_scb.put(t);
+        t_tx=t.clone(); 
+        gen_drv.put(t_tx);
+        gen_scb.put(t_tx);
+        count +=1;
 
         // t.cover_alpha.stop();
 

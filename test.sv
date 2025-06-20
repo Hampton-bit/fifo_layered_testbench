@@ -5,7 +5,7 @@ program test(fifo_interface f_int);//.fifo_testBench
     env environment;
 
     initial begin 
-        environment=new(5000, f_int);
+        environment=new(10, f_int);
         environment.run();
     end 
 
