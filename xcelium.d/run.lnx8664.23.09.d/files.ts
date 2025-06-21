@@ -11,4 +11,5 @@
 1750503963 /home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_reset.sv
 1750509830 /home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_read_after_write.sv
 1750503963 /home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_fifo_full.sv
-1750503963 /home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_fifo_empty.sv
+1750515849 /home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_fifo_empty.sv
+1750516827 /home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_writing_when_full.sv

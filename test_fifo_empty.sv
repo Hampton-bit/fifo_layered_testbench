@@ -23,7 +23,6 @@ program test(fifo_interface f_int);//.fifo_testBench
         environment=new(12, f_int);
         $cast(environment.gen.t,rt);      
         environment.run();
-   
     end 
 
 endprogram
