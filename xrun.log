@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jun 21, 2025 at 15:40:11 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jun 21, 2025 at 15:57:05 PKT
 xrun
 	-f file.f
 		./transaction.sv
@@ -13,8 +13,6 @@ xrun
 		./test_read_after_write.sv
 		./testbench.sv
 	-access +rwc
-	-gui
-	-s
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -195,9 +193,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file './fifo_interface.sv' is newer than expected.
-	expected: Sat Jun 21 15:32:01 2025
-	actual:   Sat Jun 21 15:40:06 2025
+Recompiling... reason: file './driver.sv' is newer than expected.
+	expected: Sat Jun 21 15:53:58 2025
+	actual:   Sat Jun 21 15:57:04 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -291,6 +289,7 @@ xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cd
 file: ./fifo_interface.sv
 	interface worklib.fifo_interface:sv
 		errors: 0, warnings: 0
+file: ./driver.sv
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 15
 DEFINE std       ./STD
@@ -484,14 +483,14 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.test:sv <0x239888d6>
+		worklib.test:sv <0x6c8d50a6>
 			streams:   1, words:  1946
-		worklib.synchronous_fifo:sv <0x17d598fd>
+		worklib.synchronous_fifo:sv <0x0ceababf>
 			streams:   9, words:  3297
-		worklib.top:sv <0x4c5220cf>
+		worklib.top:sv <0x316c701d>
 			streams:  10, words:  2398
-		worklib.fifo_interface:sv <0x7bb9ebe2>
-			streams:  78, words: 83770
+		worklib.fifo_interface:sv <0x493f6e9c>
+			streams:  78, words: 82288
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -562,16 +561,9 @@ xmsim: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmsim: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+Loading snapshot worklib.top:sv .................... Done
 SVSEED default: 1
-xcelium> 
 xcelium> source /home/cc/mnt/XCELIUM2309/tools/xcelium/files/xmsimrc
-xcelium> 
--------------------------------------
-Relinquished control to SimVision...
-# Restoring simulation environment...
-xcelium> input -quiet .reinvoke.sim
-xcelium> file delete .reinvoke.sim
 xcelium> run
 write
 [20][0] Generator: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
@@ -583,24 +575,23 @@ read
 [20][3] Generator: DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
 generator ended
 driver started
-[25][0] Driver:  DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[21][0] Driver:  DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[22][1] Driver:  DataIn=78, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[23][2] Driver:  DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[24][3] Driver:  DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
 [25][0] Monitor: DataIn=00, Data_out=00, r_en=0, w_en=0, rst_n=0, full=0, empty=1
 reset test passed
-[35][1] Monitor: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=0, full=0, empty=1
-[35][1] Driver:  DataIn=78, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-reset test passed
-[45][2] Monitor: DataIn=0d, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=0
-[45][2] Driver:  DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[35][1] Monitor: DataIn=94, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=1
 reset test passed
 Mismatch | fifo: 00 | ref_model: d 
-[55][3] Monitor: DataIn=94, Data_out=0d, r_en=0, w_en=1, rst_n=0, full=0, empty=1
-[55][3] Driver:  DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-reset test failed
+[45][2] Monitor: DataIn=94, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=1
+reset test passed
+Mismatch | fifo: 00 | ref_model: 94 
+[55][3] Monitor: DataIn=94, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=1
+reset test passed
+Match | fifo: 00 | ref_model: 0 
 Test Failed with 2 erorrs
 Simulation complete via $finish(1) at time 60 NS + 2
 ./env.sv:68         $finish;
-xcelium> run
-xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
-xcelium> run
-xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
-xcelium> 
+xcelium> exit
+TOOL:	xrun(64)	23.09-s006: Exiting on Jun 21, 2025 at 15:57:05 PKT  (total: 00:00:00)

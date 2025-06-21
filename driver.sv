@@ -33,7 +33,7 @@ task run();
         // if(got_t) begin
         //@(negedge vif.clk);
         // $display("driver started2");
-        @(posedge vif.DRIVER.clk)
+        //@(negedge vif.DRIVER.clk)
         if(t.w_en) begin 
             `DRIV_IF.w_en     <=t.w_en;
             `DRIV_IF.r_en     <=t.r_en;

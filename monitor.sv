@@ -15,7 +15,7 @@ endfunction
 task run();
 
     forever begin 
-       @(posedge vif.MONITOR.clk);
+       @(posedge vif.clk);
        
        //#2ns;
     //    if(!vif.rst_n) continue;

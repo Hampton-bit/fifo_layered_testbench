@@ -14,6 +14,10 @@ timeprecision 1ns;
 
     @(negedge  clk);
     rst_n=0;
+    // w_en=0;
+    // r_en=0;
+    // data_in=0;
+
 
     @(negedge  clk);
     rst_n=1;
@@ -21,7 +25,7 @@ timeprecision 1ns;
   endtask
 
   clocking driver_cb @(posedge clk);
-   //default input #1 output #2;
+   default input #1 output #2;
     output w_en,r_en;
     output data_in;
 
