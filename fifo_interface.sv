@@ -14,37 +14,35 @@ timeprecision 1ns;
 
     @(negedge  clk);
     rst_n=0;
-    // w_en=0;
-    // r_en=0;
-    // data_in=0;
-
-
     @(negedge  clk);
     rst_n=1;
 
   endtask
 
-  clocking driver_cb @(posedge clk);
-   default input #1 output #2;
-    output w_en,r_en;
-    output data_in;
+  clocking driver_cb @(negedge clk);
+    default output #0;
 
-   // input data_out;
-    //input full,empty;
 
-  endclocking 
-
-  clocking monitor_cb @(posedge clk);
-    default input #1ns;
-    input w_en,r_en;
-    input data_in;
-    input data_out;
-    input full,empty;
+    // input data_out;
+    // input full,empty;
 
   endclocking 
 
-  modport DRIVER(clocking driver_cb, input clk, rst_n);
-  modport MONITOR(clocking monitor_cb, input clk,rst_n);
+//   clocking monitor_cb @(posedge clk);
+//    default input #0ns;
+// ;
+
+//   endclocking 
+
+  modport DRIVER( output w_en,r_en, data_in, input clk, rst_n);
+
+  modport MONITOR(    
+  input w_en,r_en
+        ,data_in
+        ,data_out
+        ,full,empty 
+        ,clk,rst_n
+        );
 
 
   // property full_test;

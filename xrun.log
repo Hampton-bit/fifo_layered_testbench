@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jun 21, 2025 at 15:57:05 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jun 21, 2025 at 19:00:58 PKT
 xrun
 	-f file.f
 		./transaction.sv
@@ -193,9 +193,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file './driver.sv' is newer than expected.
-	expected: Sat Jun 21 15:53:58 2025
-	actual:   Sat Jun 21 15:57:04 2025
+Recompiling... reason: file './env.sv' is newer than expected.
+	expected: Sat Jun 21 19:00:36 2025
+	actual:   Sat Jun 21 19:00:57 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -286,10 +286,7 @@ xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cd
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-file: ./fifo_interface.sv
-	interface worklib.fifo_interface:sv
-		errors: 0, warnings: 0
-file: ./driver.sv
+file: ./env.sv
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 15
 DEFINE std       ./STD
@@ -483,14 +480,14 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.test:sv <0x6c8d50a6>
+		worklib.test:sv <0x3db1efbd>
 			streams:   1, words:  1946
-		worklib.synchronous_fifo:sv <0x0ceababf>
+		worklib.synchronous_fifo:sv <0x5f231676>
 			streams:   9, words:  3297
-		worklib.top:sv <0x316c701d>
+		worklib.top:sv <0x67a3fe07>
 			streams:  10, words:  2398
-		worklib.fifo_interface:sv <0x493f6e9c>
-			streams:  78, words: 82288
+		worklib.fifo_interface:sv <0x7cc5facb>
+			streams:  71, words: 83725
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -504,8 +501,7 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15):
 		Named events:                2       6
 		Always blocks:               4       4
 		Initial blocks:              2       2
-		Clocking blocks:             2       2
-		Clocking items:              9       9
+		Clocking blocks:             1       1
 		Parallel blocks:             1       1
 		Cont. assignments:           2       3
 		Pseudo assignments:          8       -
@@ -566,32 +562,63 @@ SVSEED default: 1
 xcelium> source /home/cc/mnt/XCELIUM2309/tools/xcelium/files/xmsimrc
 xcelium> run
 write
-[20][0] Generator: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[25][0] Generator: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
 read
-[20][1] Generator: DataIn=78, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[25][1] Generator: DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
 write
-[20][2] Generator: DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[25][2] Generator: DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
 read
-[20][3] Generator: DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[25][3] Generator: DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+write
+[25][4] Generator: DataIn=72, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+read
+[25][5] Generator: DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+write
+[25][6] Generator: DataIn=4c, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+read
+[25][7] Generator: DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+write
+[25][8] Generator: DataIn=83, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+read
+[25][9] Generator: DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+write
+[25][10] Generator: DataIn=74, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+read
+[25][11] Generator: DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
 generator ended
 driver started
-[21][0] Driver:  DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[22][1] Driver:  DataIn=78, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[23][2] Driver:  DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
-[24][3] Driver:  DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[25][0] Monitor: DataIn=00, Data_out=00, r_en=0, w_en=0, rst_n=0, full=0, empty=1
-reset test passed
-[35][1] Monitor: DataIn=94, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=1
-reset test passed
-Mismatch | fifo: 00 | ref_model: d 
-[45][2] Monitor: DataIn=94, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=1
-reset test passed
-Mismatch | fifo: 00 | ref_model: 94 
-[55][3] Monitor: DataIn=94, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=1
-reset test passed
-Match | fifo: 00 | ref_model: 0 
-Test Failed with 2 erorrs
-Simulation complete via $finish(1) at time 60 NS + 2
+[30][0] Driver:  DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[40][0] Monitor: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[40][1] Driver:  DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[50][1] Monitor: DataIn=0d, Data_out=0d, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+[50][2] Driver:  DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+Match | fifo: 0d | ref_model: d 
+[60][2] Monitor: DataIn=94, Data_out=0d, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[60][3] Driver:  DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[70][3] Monitor: DataIn=94, Data_out=94, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+[70][4] Driver:  DataIn=72, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+Match | fifo: 94 | ref_model: 94 
+[80][4] Monitor: DataIn=72, Data_out=94, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[80][5] Driver:  DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[90][5] Monitor: DataIn=72, Data_out=72, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+[90][6] Driver:  DataIn=4c, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+Match | fifo: 72 | ref_model: 72 
+[100][6] Monitor: DataIn=4c, Data_out=72, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[100][7] Driver:  DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[110][7] Monitor: DataIn=4c, Data_out=4c, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+[110][8] Driver:  DataIn=83, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+Match | fifo: 4c | ref_model: 4c 
+[120][8] Monitor: DataIn=83, Data_out=4c, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[120][9] Driver:  DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[130][9] Monitor: DataIn=83, Data_out=83, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+[130][10] Driver:  DataIn=74, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+Match | fifo: 83 | ref_model: 83 
+[140][10] Monitor: DataIn=74, Data_out=83, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[140][11] Driver:  DataIn=00, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+[150][11] Monitor: DataIn=74, Data_out=74, r_en=1, w_en=0, rst_n=1, full=0, empty=1
+Match | fifo: 74 | ref_model: 74 
+Test Passed
+Simulation complete via $finish(1) at time 150 NS + 3
 ./env.sv:68         $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jun 21, 2025 at 15:57:05 PKT  (total: 00:00:00)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jun 21, 2025 at 19:00:59 PKT  (total: 00:00:01)

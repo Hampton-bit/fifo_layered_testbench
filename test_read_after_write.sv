@@ -27,6 +27,7 @@ function post_randomize();
         w_en=0;
         rst_n=1;
         count_n=0;
+        data_in=0;
         $display("read");
     end 
  endfunction
@@ -44,7 +45,7 @@ program test(fifo_interface f_int);//.fifo_testBench
     initial begin 
         rt=new();
         rt.count_n=0;
-        environment=new(4, f_int);
+        environment=new(12, f_int);
         $cast(environment.gen.t,rt);
         
         

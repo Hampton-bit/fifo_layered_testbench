@@ -38,7 +38,7 @@ class env;
     task pre_test();
 
             vif.reset();
-            //@(negedge vif.clk);
+            @(posedge vif.clk);
 
     endtask
 
@@ -49,13 +49,13 @@ class env;
             drv.run();
             mon.run();
             scb.run();
-        join_none
+        join_any
  
     endtask 
 
     task post_test();
-        //wait(gen_ended.triggered);
-        @(gen_ended);
+        wait(gen_ended.triggered);
+        //@(gen_ended);
         
         wait(drv.txns_received == repeat_count && scb.txns_received == repeat_count);
 
