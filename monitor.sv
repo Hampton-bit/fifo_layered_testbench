@@ -1,3 +1,4 @@
+`define MON_IF vif.MONITOR.monitor_cb
 class monitor;
 transaction t;
 virtual fifo_interface vif;
@@ -14,8 +15,9 @@ endfunction
 task run();
 
     forever begin 
-        @(posedge vif.clk);
-       #2ns;
+       @(posedge vif.MONITOR.clk);
+       
+       //#2ns;
     //    if(!vif.rst_n) continue;
         // @(posedge vif.clk);
         // #2ns;
@@ -23,13 +25,15 @@ task run();
         
         // Capture all interface signals
 
-        t.data_in  = vif.data_in;
-        t.data_out = vif.data_out;
-        t.empty    = vif.empty;
-        t.full     = vif.full;
-        t.rst_n    = vif.rst_n;
-        t.r_en     = vif.r_en;
-        t.w_en     = vif.w_en;
+        t.data_in  = `MON_IF.data_in;
+        t.data_out = `MON_IF.data_out;
+        t.empty    = `MON_IF.empty;
+        t.full     = `MON_IF.full;
+    
+        t.r_en     = `MON_IF.r_en;
+        t.w_en     = `MON_IF.w_en;
+        //@(posedge vif.clk);
+
         // if (t.data_out === 'x) begin
         //     $fatal("[%0t] WARNING: Read uninitialized memory at address %0d", $time, t.addr);
         // end

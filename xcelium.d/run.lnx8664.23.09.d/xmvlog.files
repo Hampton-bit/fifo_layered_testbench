@@ -10,5 +10,5 @@
 "/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/scoreboard.sv"
 "/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/env.sv"
 "/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/fifo.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_fifo_empty.sv"
+"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_read_after_write.sv"
 "/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/testbench.sv"

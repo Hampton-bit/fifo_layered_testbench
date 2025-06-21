@@ -38,6 +38,7 @@ class env;
     task pre_test();
 
             vif.reset();
+            //@(negedge vif.clk);
 
     endtask
 

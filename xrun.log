@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jun 20, 2025 at 23:55:35 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jun 21, 2025 at 15:40:11 PKT
 xrun
 	-f file.f
 		./transaction.sv
@@ -10,7 +10,7 @@ xrun
 		./scoreboard.sv
 		./env.sv
 		./fifo.sv
-		./test_fifo_empty.sv
+		./test_read_after_write.sv
 		./testbench.sv
 	-access +rwc
 	-gui
@@ -196,8 +196,8 @@ DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
 Recompiling... reason: file './fifo_interface.sv' is newer than expected.
-	expected: Fri Jun 20 23:50:48 2025
-	actual:   Fri Jun 20 23:55:26 2025
+	expected: Sat Jun 21 15:32:01 2025
+	actual:   Sat Jun 21 15:40:06 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -431,7 +431,7 @@ xmelab: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cd
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		$unit_0x46f54156
+		$unit_0x4c9ac920
 		top
 	Building instance overlay tables: ........
         assert(t.randomize()) else $fatal("randomization failed");
@@ -484,14 +484,14 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.test_fifo_empty:sv <0x428d7c5c>
-			streams:   1, words:  1927
-		worklib.synchronous_fifo:sv <0x3dba3e63>
+		worklib.test:sv <0x239888d6>
+			streams:   1, words:  1946
+		worklib.synchronous_fifo:sv <0x17d598fd>
 			streams:   9, words:  3297
-		worklib.top:sv <0x15811143>
-			streams:  10, words:  2401
-		worklib.fifo_interface:sv <0x447097ab>
-			streams:  71, words: 75187
+		worklib.top:sv <0x4c5220cf>
+			streams:  10, words:  2398
+		worklib.fifo_interface:sv <0x7bb9ebe2>
+			streams:  78, words: 83770
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -499,20 +499,22 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15):
 		Modules:                     2       2
 		Interfaces:                  1       1
 		Programs:                    1       1
-		Registers:                  77     121
+		Registers:                  78     122
 		Scalar wires:               10       -
 		Vectored wires:              3       -
-		Named events:                4       8
-		Always blocks:              10      10
-		Initial blocks:              4       4
+		Named events:                2       6
+		Always blocks:               4       4
+		Initial blocks:              2       2
+		Clocking blocks:             2       2
+		Clocking items:              9       9
 		Parallel blocks:             1       1
 		Cont. assignments:           2       3
 		Pseudo assignments:          8       -
-		Assertions:                  3       3
+		Assertions:                  1       1
 		Compilation units:           1       1
 		SV Class declarations:       7       7
 		SV Class specializations:    7       7
-		Process Clocks:              5       3
+		Process Clocks:              3       2
 		Simulation timescale:      1ns
 	Writing initial simulation snapshot: worklib.top:sv
 DEFINE std       ./STD
@@ -571,49 +573,34 @@ Relinquished control to SimVision...
 xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
 xcelium> run
-[20][0] Generator: DataIn=ac, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][1] Generator: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][2] Generator: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][3] Generator: DataIn=e8, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][4] Generator: DataIn=25, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][5] Generator: DataIn=f5, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][6] Generator: DataIn=f6, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][7] Generator: DataIn=06, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][8] Generator: DataIn=99, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][9] Generator: DataIn=58, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][10] Generator: DataIn=50, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
-[20][11] Generator: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+write
+[20][0] Generator: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+read
+[20][1] Generator: DataIn=78, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+write
+[20][2] Generator: DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+read
+[20][3] Generator: DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
 generator ended
 driver started
-[27][0] Monitor: DataIn=ac, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[37][1] Monitor: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[47][2] Monitor: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[57][3] Monitor: DataIn=e8, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[67][4] Monitor: DataIn=25, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[77][5] Monitor: DataIn=f5, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[87][6] Monitor: DataIn=f6, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[97][7] Monitor: DataIn=06, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[107][8] Monitor: DataIn=99, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[117][9] Monitor: DataIn=58, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[127][10] Monitor: DataIn=50, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-[137][11] Monitor: DataIn=17, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=1
-Match | fifo: 00 | ref_model: 0 
-Test Passed
-Simulation complete via $finish(1) at time 140 NS + 2
-./env.sv:67         $finish;
-xcelium> ^C
-xcelium> exit
-...Regained control from SimVision
--------------------------------------
-TOOL:	xrun(64)	23.09-s006: Exiting on Jun 20, 2025 at 23:57:12 PKT  (total: 00:01:37)
+[25][0] Driver:  DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[25][0] Monitor: DataIn=00, Data_out=00, r_en=0, w_en=0, rst_n=0, full=0, empty=1
+reset test passed
+[35][1] Monitor: DataIn=0d, Data_out=00, r_en=0, w_en=1, rst_n=0, full=0, empty=1
+[35][1] Driver:  DataIn=78, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+reset test passed
+[45][2] Monitor: DataIn=0d, Data_out=00, r_en=1, w_en=0, rst_n=0, full=0, empty=0
+[45][2] Driver:  DataIn=94, Data_out=00, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+reset test passed
+Mismatch | fifo: 00 | ref_model: d 
+[55][3] Monitor: DataIn=94, Data_out=0d, r_en=0, w_en=1, rst_n=0, full=0, empty=1
+[55][3] Driver:  DataIn=cb, Data_out=00, r_en=1, w_en=0, rst_n=1, full=0, empty=0
+reset test failed
+Test Failed with 2 erorrs
+Simulation complete via $finish(1) at time 60 NS + 2
+./env.sv:68         $finish;
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> 

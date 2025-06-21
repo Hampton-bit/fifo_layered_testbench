@@ -34,7 +34,7 @@ endfunction
 endclass 
 
 
-program test_fifo_full(fifo_interface f_int);//.fifo_testBench
+program test(fifo_interface f_int);//.fifo_testBench
 
     timeunit 1ns;
     timeprecision 1ns;
