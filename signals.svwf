@@ -1,0 +1,51 @@
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.rst_n}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.data_in[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.data_out[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.w_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.r_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.full}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.empty}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.fifo[0:31]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.r_ptr[5:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.w_ptr[5:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {top.fifo1.wrap_around}]}
+	} ]]
+
+waveform xview limits 0 2000ns

@@ -13,6 +13,9 @@ class env;
     monitor mon;
     scoreboard scb;
 
+    coverage #(32,32) c ;
+
+
     event gen_ended;
     event scb_ended;
 
@@ -24,6 +27,7 @@ class env;
         gen_scb = new();
         mon_scb = new();
         // drv_scb=new();
+        c=new(vif);
  
         this.vif = vif;
         this.repeat_count = repeat_count;
@@ -34,6 +38,15 @@ class env;
         scb = new(mon_scb, gen_scb, scb_ended, repeat_count, mon_transmitted);
 
     endfunction
+
+    task sample_coverage();
+        forever begin 
+            @(posedge vif.clk);
+            #1ns;
+            c.cg.sample();
+            $display("[%0t] Sampling coverage: data_in = %h", $time, vif.data_in);
+        end 
+    endtask
 
     task pre_test();
 
@@ -49,6 +62,7 @@ class env;
             drv.run();
             mon.run();
             scb.run();
+            sample_coverage();
         join_any
  
     endtask 

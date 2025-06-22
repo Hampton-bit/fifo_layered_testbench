@@ -22,19 +22,19 @@ int count = 0;
    
     repeat(repeat_count) begin 
 
-        // t.cover_alpha.start();
+        //t.cg.start();
         //t=new();
     
         
         assert(t.randomize()) else $fatal("randomization failed");
-        $display("[%0t][%0d] Generator: DataIn=%h, Data_out=%h, r_en=%d, w_en=%d, rst_n=%d, full=%b, empty=%b", $time, count, t.data_in, t.data_out, t.r_en, t.w_en, t.rst_n, t.full, t.empty);
-        // t.cover_alpha.sample();
+        $display("[%0t][%0d] Generator: DataIn=%h, Data_out=%h, r_en=%d, w_en=%d, rst_n=%d, full=%b, empty=%b", $time, (count+1), t.data_in, t.data_out, t.r_en, t.w_en, t.rst_n, t.full, t.empty);
+        //t.cg.sample();
         t_tx=t.clone(); 
         gen_drv.put(t_tx);
         gen_scb.put(t_tx);
         count +=1;
 
-        // t.cover_alpha.stop();
+       // t.cg.stop();
 
     end
     $display("generator ended");

@@ -6,3 +6,9 @@
 file.f
 -access
 +rwc
+-coverage
+U
+-covdut
+top
+-covoverwrite
+-gui

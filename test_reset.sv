@@ -1,7 +1,7 @@
 class reset_trans extends transaction;
 
  function post_randomize();
-    rst_n=1;
+    rst_n=0;
     r_en=0;
     w_en=0;
     data_in=0;

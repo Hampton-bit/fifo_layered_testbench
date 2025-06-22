@@ -44,7 +44,7 @@ program test(fifo_interface f_int);//.fifo_testBench
     initial begin 
         rt=new();
         rt.count_n=0;
-        environment=new(12, f_int);
+        environment=new(35, f_int);
         $cast(environment.gen.t,rt);
         
         

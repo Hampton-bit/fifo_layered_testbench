@@ -1,5 +1,5 @@
 class test_writing_when_full extends transaction;
-    static bit count_n;
+    static int count_n;
 
     function pre_randomize();
         r_en.rand_mode(0);
@@ -13,10 +13,11 @@ class test_writing_when_full extends transaction;
         end 
         else begin 
             w_en=1;
+            r_en = 0;
+            $display("Attempting write when FIFO is full");
         end 
-        $display("Attempting write when FIFO is full");
-        r_en = 0;
-        w_en = 1;
+
+
 
     endfunction
 endclass 
@@ -34,7 +35,7 @@ program test(fifo_interface f_int);//.fifo_testBench
         rt.count_n=0;
         //trans_driven=rt.DEPTH+1;
 
-        environment=new(12, f_int);
+        environment=new(10, f_int);
         $cast(environment.gen.t,rt);
 
         environment.run();

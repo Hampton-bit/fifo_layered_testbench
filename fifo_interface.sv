@@ -1,4 +1,4 @@
-interface fifo_interface #(parameter DEPTH=8, WIDTH=8) (
+interface fifo_interface #(parameter DEPTH=32, parameter WIDTH=32) (
   input logic clk
 );
 
@@ -42,7 +42,7 @@ timeprecision 1ns;
         ,data_out
         ,full,empty 
         ,clk,rst_n
-        );
+  );
 
 
   // property full_test;
@@ -52,17 +52,21 @@ timeprecision 1ns;
 
 
 
-  // property full_test;
-  //   @(negedge clk)
-  //   !full && w_en |=> w_en[*DEPTH-1] ##1 full;
-  // endproperty
-  // assert property(full_test) else $error("FIFO FULL test failed!");
+  property full_test;
+    @(posedge clk)
+    full && w_en |=>  $stable(full) && !empty;
+  endproperty
 
-  // property empty_test;
-  //   @(negedge clk)
-  //   r_en |=> r_en[*0:DEPTH-1] ##1 empty;
-  // endproperty
-  // assert property(empty_test) else $error("FIFO FULL test failed!");
+  assert property(full_test) else $error("FIFO FULL test failed!");
 
+  property empty_test;
+    @(posedge clk)
+    empty && r_en |=> $stable(empty) && !full;
+  endproperty
+
+  assert property(empty_test) else $error("FIFO FULL test failed!");
+
+
+  //cover property (@(posedge clk) w_en ##1 r_en);
 
 endinterface : fifo_interface

@@ -45,17 +45,40 @@ task run();
         #10ns;
         gen_scb.get(t1);
         gen=t1.clone();
-        // if(got_gen_scb) begin 
-            if(gen.w_en) begin 
-                ref_model.push_back(gen.data_in);
+
+        mon_scb.get(t2);
+        mon=t2.clone();
+
+
+        if(mon.r_en && mon.rst_n) begin  
+            if(ref_model.size()>0) begin 
+                expected=ref_model.pop_front();
+                if(mon.data_out != expected) begin 
+                        
+                    error_count++;
+                        // error_list.data=t2.data_in;
+                        // error_list[t2.addr].ref_model=ref_model[t2.addr];
+                    $display("Mismatch | fifo: %h | ref_model: %0h ",mon.data_out, expected);
+                    
+                end
+                else begin 
+
+                    $display("Match | fifo: %h | ref_model: %0h ",mon.data_out, expected);
+
+                end
             end 
+        end
+
+        // if(got_gen_scb) begin 
+        if(gen.w_en && gen.rst_n) begin 
+            ref_model.push_back(gen.data_in);
+        end 
     //end 
         // got_mon_scb=
     //if (mon_scb.num() > 0) begin
-        mon_scb.get(t2);
-        mon=t2.clone();
+
         if(!mon.rst_n) begin 
-            if(!mon.full && !mon.data_out) begin 
+            if(!mon.full && mon.empty) begin 
                 $display("reset test passed");
                 
             end
@@ -66,22 +89,7 @@ task run();
         
         end
         // if(got_mon_scb) begin 
-        if(mon.r_en) begin   
-            expected=ref_model.pop_front();
-            if(mon.data_out != expected) begin 
-                    
-                error_count++;
-                    // error_list.data=t2.data_in;
-                    // error_list[t2.addr].ref_model=ref_model[t2.addr];
-                $display("Mismatch | fifo: %h | ref_model: %0h ",mon.data_out, expected);
-                 
-            end
-            else begin 
 
-                $display("Match | fifo: %h | ref_model: %0h ",mon.data_out, expected);
-
-            end
-        end
 
         txns_received++;
         

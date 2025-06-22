@@ -2,13 +2,14 @@
 // File created by:  xrun
 // Do not modify this file
 //
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/transaction.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/fifo_interface.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/generator.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/driver.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/monitor.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/scoreboard.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/env.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/fifo.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/test_writing_when_full.sv"
-"/home/cc/Downloads/SV_module/NCDC_DV_Weekend_Project (FIFO Verification)/layered/testbench.sv"
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/transaction.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/fifo_interface.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/generator.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/driver.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/monitor.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/scoreboard.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/coverage.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/env.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/fifo.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/test_read_after_write.sv
+/home/cc/Downloads/SV_module/layered_FIFO_Verification/layered/testbench.sv
