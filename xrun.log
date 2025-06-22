@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jun 22, 2025 at 18:17:25 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jun 22, 2025 at 20:39:07 PKT
 xrun
 	-f file.f
 		./transaction.sv
@@ -11,7 +11,7 @@ xrun
 		./coverage.sv
 		./env.sv
 		./fifo.sv
-		./test_read_after_write.sv
+		./test_depth.sv
 		./testbench.sv
 	-access +rwc
 	-coverage U
@@ -200,6 +200,99 @@ DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
 DEFINE std       ./STD
 |
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+Recompiling... reason: file './fifo_interface.sv' is newer than expected.
+	expected: Sun Jun 22 20:32:27 2025
+	actual:   Sun Jun 22 20:34:43 2025
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
 DEFINE synopsys  ./SYNOPSYS
 |
@@ -243,17 +336,8 @@ xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cd
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-file: ./fifo_interface.sv
-	interface worklib.fifo_interface:sv
-		errors: 0, warnings: 0
-file: ./fifo.sv
-	module worklib.synchronous_fifo:sv
-		errors: 0, warnings: 0
-file: ./test_read_after_write.sv
+file: ./test_depth.sv
 	program worklib.test:sv
-		errors: 0, warnings: 0
-file: ./testbench.sv
-	module worklib.top:sv
 		errors: 0, warnings: 0
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 15
@@ -395,7 +479,7 @@ xmelab: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cd
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		$unit_0x58c27641
+		$unit_0x42a2fd47
 		top
 	Building instance overlay tables: ........
         assert(t.randomize()) else $fatal("randomization failed");
@@ -449,14 +533,14 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.test:sv <0x288e59c6>
-			streams:   1, words:  1946
-		worklib.synchronous_fifo:sv <0x23140dfc>
+		worklib.test:sv <0x5cf0d628>
+			streams:   1, words:  1657
+		worklib.synchronous_fifo:sv <0x310b0fbb>
 			streams:   9, words:  3256
-		worklib.top:sv <0x44b7b599>
+		worklib.top:sv <0x040fe0de>
 			streams:  10, words:  2386
-		worklib.fifo_interface:sv <0x6d856c29>
-			streams:  90, words: 100667
+		worklib.fifo_interface:sv <0x2dbe05c9>
+			streams:  95, words: 103050
 	Building instance specific data structures.
 xmelab: *W,CGPIDF: Covergroup "per_instance" option , by default, is set as 0.
 xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
@@ -466,22 +550,22 @@ xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_inst
 		Modules:                     2       2
 		Interfaces:                  1       1
 		Programs:                    1       1
-		Registers:                  93     142
+		Registers:                  90     139
 		Scalar wires:               10       -
 		Vectored wires:              3       -
-		Named events:                4       8
-		Always blocks:              10      10
-		Initial blocks:              4       4
+		Named events:                6      10
+		Always blocks:              14      14
+		Initial blocks:              5       5
 		Clocking blocks:             1       1
 		Parallel blocks:             1       1
 		Cont. assignments:           2       3
 		Pseudo assignments:          8       -
-		Assertions:                  3       3
+		Assertions:                  4       4
 		Covergroup Instances:        0       1
 		Compilation units:           1       1
 		SV Class declarations:       8       8
 		SV Class specializations:    8       8
-		Process Clocks:              5       3
+		Process Clocks:              6       3
 		Simulation timescale:      1ns
 	Writing initial simulation snapshot: worklib.top:sv
 DEFINE std       ./STD
@@ -536,10 +620,195 @@ SVSEED default: 1
 Relinquished control to SimVision...
 xcelium> 
 xcelium> source /home/cc/mnt/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm top.f_int.depth_test -waveform -assertions -assertdebug
+Created probe 1
+xcelium> probe -create -shm top.f_int.depth_test -waveform -assertions -transaction
+Created probe 2
+xcelium> probe -create -shm top.f_int.depth_test top.f_int.clk top.f_int.empty top.f_int.w_en top.f_int.full
+Created probe 3
+xcelium> run
+stop -create -name Randomize -randomize
+Created stop Randomize
+
+write
+[25][1] Generator: DataIn=7f21, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][2] Generator: DataIn=c241, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][3] Generator: DataIn=bfaf, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][4] Generator: DataIn=02c9, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][5] Generator: DataIn=6b12, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][6] Generator: DataIn=28a1, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][7] Generator: DataIn=4008, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][8] Generator: DataIn=a074, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][9] Generator: DataIn=9eb0, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][10] Generator: DataIn=098e, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][11] Generator: DataIn=9c7d, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][12] Generator: DataIn=8a23, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][13] Generator: DataIn=06af, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][14] Generator: DataIn=f4ff, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][15] Generator: DataIn=f55a, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][16] Generator: DataIn=6a4e, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][17] Generator: DataIn=dd26, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][18] Generator: DataIn=0a47, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][19] Generator: DataIn=8717, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][20] Generator: DataIn=6c14, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][21] Generator: DataIn=68ce, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][22] Generator: DataIn=dc6b, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][23] Generator: DataIn=bb30, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][24] Generator: DataIn=8f81, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][25] Generator: DataIn=5507, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][26] Generator: DataIn=0cf9, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][27] Generator: DataIn=d95c, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][28] Generator: DataIn=7fff, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][29] Generator: DataIn=91b3, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][30] Generator: DataIn=7a29, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][31] Generator: DataIn=75f9, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][32] Generator: DataIn=f6de, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+write
+[25][33] Generator: DataIn=dd5c, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+generator ended
+driver started
+[30][1] Driver:  DataIn=7f21, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[36] Sampling coverage: data_in = 00007f21
+[40][1] Monitor: DataIn=7f21, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[40][2] Driver:  DataIn=c241, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[46] Sampling coverage: data_in = 0000c241
+[50][2] Monitor: DataIn=c241, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[50][3] Driver:  DataIn=bfaf, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[56] Sampling coverage: data_in = 0000bfaf
+[60][3] Monitor: DataIn=bfaf, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[60][4] Driver:  DataIn=02c9, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[66] Sampling coverage: data_in = 000002c9
+[70][4] Monitor: DataIn=02c9, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[70][5] Driver:  DataIn=6b12, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[76] Sampling coverage: data_in = 00006b12
+[80][5] Monitor: DataIn=6b12, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[80][6] Driver:  DataIn=28a1, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[86] Sampling coverage: data_in = 000028a1
+[90][6] Monitor: DataIn=28a1, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[90][7] Driver:  DataIn=4008, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[96] Sampling coverage: data_in = 00004008
+[100][7] Monitor: DataIn=4008, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[100][8] Driver:  DataIn=a074, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[106] Sampling coverage: data_in = 0000a074
+[110][8] Monitor: DataIn=a074, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[110][9] Driver:  DataIn=9eb0, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[116] Sampling coverage: data_in = 00009eb0
+[120][9] Monitor: DataIn=9eb0, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[120][10] Driver:  DataIn=098e, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[126] Sampling coverage: data_in = 0000098e
+[130][10] Monitor: DataIn=098e, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[130][11] Driver:  DataIn=9c7d, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[136] Sampling coverage: data_in = 00009c7d
+[140][11] Monitor: DataIn=9c7d, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[140][12] Driver:  DataIn=8a23, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[146] Sampling coverage: data_in = 00008a23
+[150][12] Monitor: DataIn=8a23, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[150][13] Driver:  DataIn=06af, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[156] Sampling coverage: data_in = 000006af
+[160][13] Monitor: DataIn=06af, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[160][14] Driver:  DataIn=f4ff, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[166] Sampling coverage: data_in = 0000f4ff
+[170][14] Monitor: DataIn=f4ff, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[170][15] Driver:  DataIn=f55a, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[176] Sampling coverage: data_in = 0000f55a
+[180][15] Monitor: DataIn=f55a, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[180][16] Driver:  DataIn=6a4e, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[186] Sampling coverage: data_in = 00006a4e
+[190][16] Monitor: DataIn=6a4e, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[190][17] Driver:  DataIn=dd26, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[196] Sampling coverage: data_in = 0000dd26
+[200][17] Monitor: DataIn=dd26, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[200][18] Driver:  DataIn=0a47, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[206] Sampling coverage: data_in = 00000a47
+[210][18] Monitor: DataIn=0a47, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[210][19] Driver:  DataIn=8717, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[216] Sampling coverage: data_in = 00008717
+[220][19] Monitor: DataIn=8717, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[220][20] Driver:  DataIn=6c14, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[226] Sampling coverage: data_in = 00006c14
+[230][20] Monitor: DataIn=6c14, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[230][21] Driver:  DataIn=68ce, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[236] Sampling coverage: data_in = 000068ce
+[240][21] Monitor: DataIn=68ce, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[240][22] Driver:  DataIn=dc6b, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[246] Sampling coverage: data_in = 0000dc6b
+[250][22] Monitor: DataIn=dc6b, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[250][23] Driver:  DataIn=bb30, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[256] Sampling coverage: data_in = 0000bb30
+[260][23] Monitor: DataIn=bb30, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[260][24] Driver:  DataIn=8f81, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[266] Sampling coverage: data_in = 00008f81
+[270][24] Monitor: DataIn=8f81, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[270][25] Driver:  DataIn=5507, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[276] Sampling coverage: data_in = 00005507
+[280][25] Monitor: DataIn=5507, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[280][26] Driver:  DataIn=0cf9, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[286] Sampling coverage: data_in = 00000cf9
+[290][26] Monitor: DataIn=0cf9, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[290][27] Driver:  DataIn=d95c, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[296] Sampling coverage: data_in = 0000d95c
+[300][27] Monitor: DataIn=d95c, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[300][28] Driver:  DataIn=7fff, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[306] Sampling coverage: data_in = 00007fff
+[310][28] Monitor: DataIn=7fff, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[310][29] Driver:  DataIn=91b3, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[316] Sampling coverage: data_in = 000091b3
+[320][29] Monitor: DataIn=91b3, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[320][30] Driver:  DataIn=7a29, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[326] Sampling coverage: data_in = 00007a29
+[330][30] Monitor: DataIn=7a29, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[330][31] Driver:  DataIn=75f9, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[336] Sampling coverage: data_in = 000075f9
+[340][31] Monitor: DataIn=75f9, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=0, empty=0
+[340][32] Driver:  DataIn=f6de, Data_out=0000, r_en=0, w_en=1, rst_n=1
+[346] Sampling coverage: data_in = 0000f6de
+[350][32] Monitor: DataIn=f6de, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=1, empty=0
+[350][33] Driver:  DataIn=dd5c, Data_out=0000, r_en=0, w_en=1, rst_n=1
+helll FUCK
+[356] Sampling coverage: data_in = 0000dd5c
+[360][33] Monitor: DataIn=dd5c, Data_out=0000, r_en=0, w_en=1, rst_n=1, full=1, empty=0
+Test Passed
+Simulation complete via $finish(1) at time 360 NS + 3
+./env.sv:82         $finish;
 xcelium> ^C
 xcelium> exit
-xmsim: *W,NORUNCMD: No 'run' command issued.
+...Regained control from SimVision
+-------------------------------------
 xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+xmsim: *W,CGDEFN: Default name "top.t1.environment.c.cg" will be generated for covergroup instance "cg" as the name of the covergroup instance is not specified explicitly: ./coverage.sv, 7.
 
 coverage setup:
   workdir  :  ./cov_work
@@ -548,6 +817,6 @@ coverage setup:
   testname :  test
 
 coverage files:
-  model(design data) :  ./cov_work/scope/icc_00000000_01dff6ed.ucm
-  data               :  ./cov_work/scope/test/icc_00000000_01dff6ed.ucd
-TOOL:	xrun(64)	23.09-s006: Exiting on Jun 22, 2025 at 18:34:35 PKT  (total: 00:17:10)
+  model(design data) :  ./cov_work/scope/icc_00000000_5882993e.ucm (reused)
+  data               :  ./cov_work/scope/test/icc_00000000_5882993e.ucd
+TOOL:	xrun(64)	23.09-s006: Exiting on Jun 22, 2025 at 20:41:20 PKT  (total: 00:02:13)

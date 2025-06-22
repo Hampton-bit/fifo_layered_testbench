@@ -61,11 +61,17 @@ timeprecision 1ns;
 
   property empty_test;
     @(posedge clk)
-    empty && r_en |=> $stable(empty) && !full;
+    empty && r_en && !w_en |=> $stable(empty) && !full;
   endproperty
 
-  assert property(empty_test) else $error("FIFO FULL test failed!");
+  assert property(empty_test) else $error("FIFO empty test failed!");
 
+  property depth_test;
+    @(posedge clk)
+    empty && w_en |=> w_en[*DEPTH-1] ##1 full; 
+  endproperty
+
+  assert property(depth_test) $display("helll FUCK"); else $error("FIFO depth test failed!");
 
   //cover property (@(posedge clk) w_en ##1 r_en);
 
