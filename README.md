@@ -161,7 +161,7 @@ All coverage points were exercised across tests, achieving 100% coverage except 
 ## Author
 
 **M. Hamza Naeem**
-Digital Design Verification Trainee
+
 NUST Chip Design Centre (NCDC), Islamabad, Pakistan
 
 
