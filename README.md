@@ -46,6 +46,22 @@ Checks that empty flag stays high during reads with empty FIFO.
 **depth\_test**
 Verifies FIFO becomes full exactly after `DEPTH` writes.
 
+
+The scoreboard includes built-in assertions to validate the FIFO behavior:
+
+- Checks that the **reference FIFO depth (`ref_fifo_depth`)** never becomes negative.
+- Asserts that the **`full`** and **`empty`** output signals of the DUT match the internal model:
+  - `assert(mon.full == full)`
+  - `assert(mon.empty == empty)`
+- On mismatch, errors are logged with timestamps and the mismatching values.
+
+Additionally:
+- **Reset behavior** is verified. After reset (`rst_n == 0`), the reference model is cleared and `empty` is expected to be `1`.
+- The scoreboard prints **match/mismatch** logs on every read.
+- Reports the remaining content in the reference model and final depth on failure.
+
+These assertions help ensure robust functional correctness across directed and constrained-random tests.
+
 ---
 
 ## Coverage Model
